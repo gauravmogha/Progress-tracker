@@ -1,0 +1,148 @@
+/* ==========================================================================
+   Progress Tracker
+   ========================================================================== */
+$progtrckr-status-color: #99c220;
+$progtrckr-border-top: 6px solid $progtrckr-status-color;
+$progtrckr-todo-color: #dde0e3;
+$progtrckr-subsection-width: 100px;
+$progtrckr-status-width: 40px;
+$progtrckr-first-last-width: 30px;
+
+$gl-blue-color: #395675;
+$white-color: #fff;
+
+ol.progtrckr {
+    margin: 0;
+   	padding: 0;
+   	position: relative;
+
+   	li {
+	    color: $gl-blue-color;
+	    display: inline-block;
+	    text-align: center;
+	    line-height: 4.5em;
+	    font-size: 13px;
+		text-transform: uppercase;
+
+		&:after {
+		    content: "\00a0\00a0";
+		}
+
+		&:before {
+		    position: relative;
+		    bottom: -2.5em;
+		    float: left;
+		    left: 50%;
+		    line-height: 1em;
+		}
+	}
+
+	li.content{
+		position: absolute;
+		text-align: left;
+		margin-left: -60px;
+	}
+
+	li.progtrckr-subsection {
+	    border-top: $progtrckr-border-top;
+	    width: $progtrckr-subsection-width;
+	}
+
+	li.progtrckr-subsection.todo{
+    	border-top-color: $progtrckr-todo-color;
+	}
+
+	li.progtrckr-subsection2 {
+	    border-top: $progtrckr-border-top;
+	    width: $progtrckr-subsection-width/2;
+	}
+
+	li.progtrckr-subsection2.todo {
+    	border-top-color: $progtrckr-todo-color;
+	}
+	
+	li.progtrckr-subsection3 {
+    	border-top: $progtrckr-border-top;
+    	width: $progtrckr-subsection-width/3;
+	}
+	
+	li.progtrckr-subsection3.todo {
+    	border-top-color: $progtrckr-todo-color;
+	}
+
+	li.progtrckr-status.todo {
+    	border-top-color: $progtrckr-todo-color;
+
+    	&:before{
+    		background-color:$progtrckr-todo-color;
+		}
+	}
+
+	li.progtrckr-status {
+	    border-top: $progtrckr-border-top;
+	    width: $progtrckr-status-width;
+
+	    &:before {
+		    content: " ";
+		    color: $white-color;
+		    background-color: $progtrckr-status-color;
+		    height: 22px;
+		    width: 22px;
+		    line-height: 1.2em;
+		    border: none;
+		    border-radius: 1.2em;
+		    top: -14px;
+		    left: 9px;
+		}
+	}
+
+	li.progtrckr-current {
+    	border-top: $progtrckr-border-top;
+    	width: $progtrckr-status-width;
+
+    	&:before {
+		    content: " ";
+		    color: $white-color;;
+		    background-color: $white-color;;
+		    height: 11px;
+		    width: 11px;
+		    border: $progtrckr-border-top;
+		    line-height: 1.2em;
+		    border-radius: 50%;
+		    top: -15px;
+		    left: 9px;
+		}
+	}
+
+	li.progtrckr-status.first{
+    	width:$progtrckr-first-last-width;
+
+    	&:before{
+ 		   left:0;
+		}
+	}
+	li.progtrckr-status.last{
+    	width:$progtrckr-first-last-width;
+    	
+    	&:before{
+ 		   left:9px;
+		}
+	}
+
+	li.progtrckr-current.last{
+    	width: $progtrckr-first-last-width;
+
+    	&:before{
+ 		   left:8px;
+		}
+	}
+	li.progtrckr-current.first{
+    	width: $progtrckr-first-last-width;
+
+    	&:before{
+ 		   left:0;
+		}
+	}
+
+}
+
